@@ -251,11 +251,11 @@ GM.Config.moneyRemoveTime               = 600
 -- mprintamount - Value of the money printed by the money printer.
 GM.Config.mprintamount                  = 250
 -- normalsalary - Sets the starting salary for newly joined players.
-GM.Config.normalsalary                  = 45
+GM.Config.normalsalary                  = 70
 -- npckillpay - Sets the money given for each NPC kill.
-GM.Config.npckillpay                    = 10
+GM.Config.npckillpay                    = 15
 -- paydelay - Sets how long it takes before people get salary.
-GM.Config.paydelay                      = 160
+GM.Config.paydelay                      = 120
 -- pocketitems - Sets the amount of objects the pocket can carry.
 GM.Config.pocketitems                   = 10
 -- pricecap - The maximum price of items (using /price).
@@ -263,7 +263,7 @@ GM.Config.pricecap                      = 500
 -- pricemin - The minimum price of items (using /price).
 GM.Config.pricemin                      = 50
 -- propcost - How much prop spawning should cost (prop paying must be enabled for this to have an effect).
-GM.Config.propcost                      = 10
+GM.Config.propcost                      = 15
 -- quakechance - Chance of an earthquake happening.
 GM.Config.quakechance                   = 4000
 -- respawntime - Minimum amount of seconds a player has to wait before respawning.
@@ -283,7 +283,7 @@ GM.Config.shipmentspawntime             = 10
 -- startinghealth - the health when you spawn.
 GM.Config.startinghealth                = 100
 -- startingmoney - your wallet when you join for the first time.
-GM.Config.startingmoney                 = 500
+GM.Config.startingmoney                 = 1250
 -- stunstickdamage - amount of damage the stunstick will do to entities.
 -- When between 0 and 1, the damage is relative, where 1 takes the entire health of the entity.
 -- When above 1, the damage is absolute

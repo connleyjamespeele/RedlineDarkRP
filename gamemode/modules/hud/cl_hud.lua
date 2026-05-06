@@ -37,6 +37,7 @@ colors.gray2 = Color(51, 58, 51,100)
 colors.red = Color(255, 0, 0, 255)
 colors.white = color_white
 colors.white1 = Color(255, 255, 255, 200)
+colors.gold = Color(255, 215, 0, 255)
 
 local function ReloadConVars()
     ConVars = {
@@ -118,6 +119,21 @@ local function DrawInfo()
 
     draw.DrawNonParsedText(JobWalletText, "DarkRPHUD2", RelativeX + 5, RelativeY - HUDHeight + h + 6, ConVars.Job1, 0)
     draw.DrawNonParsedText(JobWalletText, "DarkRPHUD2", RelativeX + 4, RelativeY - HUDHeight + h + 5, ConVars.Job2, 0)
+
+    local wealthText
+    local currentMoney = localplayer:getDarkRPVar("money") or 0
+    if currentMoney >= 5000 then
+        wealthText = DarkRP.getPhrase("wealth_status_rich")
+    elseif currentMoney >= 2500 then
+        wealthText = DarkRP.getPhrase("wealth_status_prosperous")
+    elseif currentMoney >= 1500 then
+        wealthText = DarkRP.getPhrase("wealth_status_comfortable")
+    end
+
+    if wealthText then
+        draw.DrawNonParsedText(wealthText, "DarkRPHUD2", RelativeX + 5, RelativeY - HUDHeight + h + 26, colors.gold, 0)
+        draw.DrawNonParsedText(wealthText, "DarkRPHUD2", RelativeX + 4, RelativeY - HUDHeight + h + 25, colors.darkred, 0)
+    end
 end
 
 local function SuitStatus()
