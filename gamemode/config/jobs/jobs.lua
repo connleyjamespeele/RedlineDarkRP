@@ -52,7 +52,7 @@ Use reactor terminals and worker automation to protect the facility.]],
     vote = false,
     hasLicense = false,
     candemote = false,
-    category = "Nuclear",
+    category = "Citizen",
 })
 
 TEAM_BARTENDER = DarkRP.createJob("Bartender", {
@@ -73,7 +73,7 @@ Use /bar to access the nearest bar counter.]],
     vote = false,
     hasLicense = false,
     candemote = false,
-    category = "Service",
+    category = "Citizen",
 })
 
 TEAM_CIVILIAN = TEAM_CIVILIAN or -1
@@ -92,20 +92,5 @@ DarkRP.createCategory({
     sortOrder = 100,
 })
 
-DarkRP.createCategory({
-    name = "Service",
-    categorises = "jobs",
-    startExpanded = true,
-    color = Color(180, 50, 50, 255),
-    canSee = function() return true end,
-    sortOrder = 105,
-})
 
-DarkRP.createCategory({
-    name = "Nuclear",
-    categorises = "jobs",
-    startExpanded = true,
-    color = Color(255, 20, 20, 255),
-    canSee = function() return true end,
-    sortOrder = 110,
-})
+
