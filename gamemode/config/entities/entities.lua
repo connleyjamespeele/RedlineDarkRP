@@ -97,9 +97,256 @@ DarkRP.createEntity("Nuclear Disposal NPC", {
     category = "Citizens",
 })
 
+DarkRP.createEntity("Freezer", {
+    ent = "freezer",
+    model = "models/props_c17/FurnitureFridge001a.mdl",
+    price = 500,
+    max = 2,
+    cmd = "buyfreezer",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Cooker", {
+    ent = "cooker",
+    model = "models/props_c17/furnitureStove001a.mdl",
+    price = 600,
+    max = 2,
+    cmd = "buycooker",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Preparation Table", {
+    ent = "preparation_table",
+    model = "models/props_interiors/Furniture_Desk01a.mdl",
+    price = 400,
+    max = 2,
+    cmd = "buypreptable",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Cash Register", {
+    ent = "cash_register",
+    model = "models/props_c17/cashregister01a.mdl",
+    price = 300,
+    max = 2,
+    cmd = "buycashregister",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Restaurant Table", {
+    ent = "restaurant_table",
+    model = "models/props_interiors/Furniture_Desk01a.mdl",
+    price = 200,
+    max = 10,
+    cmd = "buyrestauranttable",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Chef NPC", {
+    ent = "chef_npc",
+    model = "models/player/chef.mdl",
+    price = 1000,
+    max = 1,
+    cmd = "buychefnpc",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Management Console", {
+    ent = "management_console",
+    model = "models/props_lab/monitor01a.mdl",
+    price = 800,
+    max = 1,
+    cmd = "buymanagementconsole",
+    allowed = {TEAM_CHEF},
+    category = "Citizens",
+})
+
 DarkRP.createWeapon("Umbrella", {
     model = "models/weapons/w_knife_t.mdl",
     price = 100,
+    category = "Citizens",
+})
+
+DarkRP.createWeapon("Pickaxe", {
+    model = "models/weapons/w_crowbar.mdl",
+    price = 200,
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Miner Worker", {
+    ent = "miner_worker",
+    model = "models/player/engineer.mdl",
+    price = 800,
+    max = 2,
+    cmd = "buyminerworker",
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Refiner", {
+    ent = "refiner",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 600,
+    max = 2,
+    cmd = "buyrefiner",
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Smelter", {
+    ent = "smelter",
+    model = "models/props_c17/furnitureStove001a.mdl",
+    price = 700,
+    max = 2,
+    cmd = "buysmelter",
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Mining NPC", {
+    ent = "mining_npc",
+    model = "models/player/engineer.mdl",
+    price = 500,
+    max = 1,
+    cmd = "buyminingnpc",
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Mining Node", {
+    ent = "mining_node",
+    model = "models/props_wasteland/rockgranite02a.mdl",
+    price = 100,
+    max = 20,
+    cmd = "buyminingnode",
+    allowed = {TEAM_MINER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Manager Computer", {
+    ent = "manager_computer",
+    model = "models/props_lab/monitor01a.mdl",
+    price = 500,
+    max = 1,
+    cmd = "buymanagercomputer",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("NPC Performer", {
+    ent = "npc_performer",
+    model = "models/player/alyx.mdl",
+    price = 300,
+    max = 5,
+    cmd = "buynpcperformer",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("NPC Bartender", {
+    ent = "npc_bartender",
+    model = "models/player/group03/male_04.mdl",
+    price = 250,
+    max = 3,
+    cmd = "buynpcbartender",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("NPC Bouncer", {
+    ent = "npc_bouncer",
+    model = "models/player/combine_soldier.mdl",
+    price = 400,
+    max = 2,
+    cmd = "buynpcbouncer",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("VIP Area", {
+    ent = "vip_area",
+    model = "models/props_interiors/Furniture_Couch01a.mdl",
+    price = 1000,
+    max = 1,
+    cmd = "buyviparea",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Booth", {
+    ent = "booth",
+    model = "models/props_interiors/Furniture_Couch01a.mdl",
+    price = 800,
+    max = 5,
+    cmd = "buybooth",
+    allowed = {TEAM_CLUB_OWNER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Vat Suits", {
+    ent = "vat_suits",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 1000000,
+    max = 3,
+    cmd = "buyvatsuits",
+    allowed = {TEAM_THRAGG},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Conqueror Globe", {
+    ent = "conqueror_globe",
+    model = "models/props_phx/misc/smallcannonball.mdl",
+    price = 500000,
+    max = 1,
+    cmd = "buyconquerorglobe",
+    allowed = {TEAM_THRAGG},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Gun Lab", {
+    ent = "gun_lab",
+    model = "models/props_c17/TrapPropeller_Engine.mdl",
+    price = 50000,
+    max = 2,
+    cmd = "buygunlab",
+    allowed = {TEAM_GUN_DEALER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Suit Lab", {
+    ent = "suit_lab",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 30000,
+    max = 2,
+    cmd = "buysuitlab",
+    allowed = {TEAM_GUN_DEALER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Dealer Register", {
+    ent = "dealer_register",
+    model = "models/props_c17/cashregister01a.mdl",
+    price = 20000,
+    max = 1,
+    cmd = "buydealerregister",
+    allowed = {TEAM_GUN_DEALER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Black Market Lab", {
+    ent = "black_market_lab",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 100000,
+    max = 1,
+    cmd = "buyblackmarketlab",
+    allowed = {TEAM_BLACK_MARKET_DEALER},
     category = "Citizens",
 })
 
