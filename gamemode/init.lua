@@ -18,11 +18,11 @@ AddCSLuaFile("libraries/disjointset.lua")
 AddCSLuaFile("libraries/fn.lua")
 AddCSLuaFile("libraries/tablecheck.lua")
 
-AddCSLuaFile("config/config.lua")
-AddCSLuaFile("config/addentities.lua")
-AddCSLuaFile("config/jobrelated.lua")
-AddCSLuaFile("config/ammotypes.lua")
-AddCSLuaFile("config/licenseweapons.lua")
+AddCSLuaFile("config/settings/settings.lua")
+AddCSLuaFile("config/entities/entities.lua")
+AddCSLuaFile("config/jobs/jobs.lua")
+AddCSLuaFile("config/ammo/ammo.lua")
+AddCSLuaFile("config/settings/licenseweapons.lua")
 
 AddCSLuaFile("cl_init.lua")
 
@@ -32,8 +32,8 @@ GM.NoLicense = GM.NoLicense or {}
 include("libraries/interfaceloader.lua")
 
 include("config/_MySQL.lua")
-include("config/config.lua")
-include("config/licenseweapons.lua")
+include("config/settings/settings.lua")
+include("config/settings/licenseweapons.lua")
 
 include("libraries/fn.lua")
 include("libraries/tablecheck.lua")

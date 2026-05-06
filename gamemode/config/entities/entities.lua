@@ -161,6 +161,32 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
         cmd = "buymicrowave",
         allowed = TEAM_COOK
     })
+
+    DarkRP.createShipment("Banana", {
+        model = "models/props/cs_italy/bananna.mdl",
+        entity = "spawned_food",
+        price = 10,
+        amount = 10,
+        separate = false,
+        pricesep = 0,
+        noship = false,
+        allowed = TEAM_COOK,
+        category = "Food",
+        customCheck = function(ply) return ply:IsCook() end,
+    })
+
+    DarkRP.createShipment("Melon", {
+        model = "models/props_junk/watermelon01.mdl",
+        entity = "spawned_food",
+        price = 20,
+        amount = 10,
+        separate = false,
+        pricesep = 0,
+        noship = false,
+        allowed = TEAM_COOK,
+        category = "Food",
+        customCheck = function(ply) return ply:IsCook() end,
+    })
 end
 
 DarkRP.createCategory{
@@ -228,7 +254,7 @@ DarkRP.createCategory{
 
 DarkRP.createCategory{
     name = "Other",
-    categorises = "vehicles",
+    categorises = "weapons",
     startExpanded = true,
     color = Color(0, 107, 0, 255),
     canSee = fp{fn.Id, true},

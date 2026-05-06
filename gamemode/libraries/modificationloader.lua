@@ -8,13 +8,13 @@ Disabled defaults
 ---------------------------------------------------------------------------]]
 DarkRP.disabledDefaults = {}
 DarkRP.disabledDefaults["modules"] = {
-    ["afk"]              = true,
+    ["afk"]              = false,
     ["chatsounds"]       = false,
     ["events"]           = false,
     ["fpp"]              = false,
     ["hitmenu"]          = false,
     ["hud"]              = false,
-    ["hungermod"]        = true,
+    ["hungermod"]        = false,
     ["playerscale"]      = false,
     ["sleep"]            = false,
 }
@@ -44,8 +44,8 @@ end
 Config
 ---------------------------------------------------------------------------]]
 local configFiles = {
-    "darkrp_config/settings.lua",
-    "darkrp_config/licenseweapons.lua",
+    "config/settings/settings.lua",
+    "config/settings/licenseweapons.lua",
 }
 
 for _, File in ipairs(configFiles) do

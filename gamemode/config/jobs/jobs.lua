@@ -223,6 +223,36 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
     })
 end
 
+TEAM_HITMAN = DarkRP.createJob("Hitman", {
+    color = Color(0, 0, 0, 255),
+    model = "models/player/leet.mdl",
+    description = [[People hire you to take out other people.
+        You can use the /hitmenu to accept hits and get paid for it.]],
+    weapons = {"weapon_p2282"},
+    command = "hitman",
+    max = 1,
+    salary = 65,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "Citizens",
+})
+
+TEAM_THIEF = DarkRP.createJob("Thief", {
+    color = Color(100, 100, 100, 255),
+    model = "models/player/phoenix.mdl",
+    description = [[You are a thief. You can lockpick doors and steal money from players.
+        You can also use the keypad cracker to crack keypads.]],
+    weapons = {"lockpick", "keypadcracker"},
+    command = "thief",
+    max = 2,
+    salary = 50,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "Citizens",
+})
+
 -- Compatibility for when default teams are disabled
 TEAM_CITIZEN = TEAM_CITIZEN  or -1
 TEAM_POLICE  = TEAM_POLICE   or -1
@@ -234,6 +264,8 @@ TEAM_CHIEF   = TEAM_CHIEF    or -1
 TEAM_MAYOR   = TEAM_MAYOR    or -1
 TEAM_HOBO    = TEAM_HOBO     or -1
 TEAM_COOK    = TEAM_COOK     or -1
+TEAM_HITMAN  = TEAM_HITMAN   or -1
+TEAM_THIEF   = TEAM_THIEF    or -1
 
 -- Door groups
 AddDoorGroup("Cops and Mayor only", TEAM_CHIEF, TEAM_POLICE, TEAM_MAYOR)

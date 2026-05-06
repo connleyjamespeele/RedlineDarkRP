@@ -22,7 +22,7 @@ GM.Config.AdminsCopWeapons              = true
 -- adminBypassJobCustomCheck - Enable/disable whether an admin can force set a job with whenever customCheck returns false.
 GM.Config.adminBypassJobRestrictions    = true
 -- Acts/Taunts - Enable/disable Taunts (e.g. act salute)
-GM.Config.allowActs                     = false
+GM.Config.allowActs                     = true
 -- allow people getting their own custom jobs.
 GM.Config.allowjobswitch                = true
 -- allowrpnames - Allow Players to Set their RP names using the /rpname command.
@@ -34,7 +34,7 @@ GM.Config.allowvehicleowning            = true
 -- allowvnocollide - Enable/disable the ability to no-collide a vehicle (for security).
 GM.Config.allowvnocollide               = false
 -- alltalk - Enable for global chat, disable for local chat.
-GM.Config.alltalk                       = false
+GM.Config.alltalk                       = true
 -- antimultirun - Disallow people joining your server(s) twice on the same account.
 GM.Config.antimultirun                  = true
 -- autovehiclelock - Enable/Disable automatic locking of a vehicle when a player exits it.
