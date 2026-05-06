@@ -120,6 +120,15 @@ local function DrawInfo()
     draw.DrawNonParsedText(JobWalletText, "DarkRPHUD2", RelativeX + 4, RelativeY - HUDHeight + h + 5, ConVars.Job2, 0)
 end
 
+local function SuitStatus()
+    local inventory = LocalPlayer().RedlineInventory
+    if not inventory or not inventory.suit then return end
+
+    local suitText = string.format("Suit: %s (%d durability)", inventory.suit.name, inventory.suit.durability)
+    draw.DrawNonParsedText(suitText, "DarkRPHUD2", RelativeX + 5, RelativeY - HUDHeight + 90, ConVars.Job1, 0)
+    draw.DrawNonParsedText(suitText, "DarkRPHUD2", RelativeX + 4, RelativeY - HUDHeight + 89, ConVars.Job2, 0)
+end
+
 local Page = Material("icon16/page_white_text.png")
 local function GunLicense()
     if localplayer:getDarkRPVar("HasGunlicense") then
@@ -251,6 +260,7 @@ local function DrawHUD(gamemodeTable)
         draw.RoundedBox(6, 0, Scrh - HUDHeight, HUDWidth, HUDHeight, ConVars.background)
         DrawHealth()
         DrawInfo()
+        SuitStatus()
         GunLicense()
     end
     Agenda(gamemodeTable)

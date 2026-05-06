@@ -27,6 +27,16 @@ DarkRP.createEntity("Delivery Terminal", {
     category = "Citizens",
 })
 
+DarkRP.createEntity("Bar Counter", {
+    ent = "bartender_bar",
+    model = "models/props_wasteland/kitchen_counter001b.mdl",
+    price = 1200,
+    max = 2,
+    cmd = "buybarcounter",
+    allowed = {TEAM_BARTENDER},
+    category = "Service",
+})
+
 DarkRP.createEntity("Reactor", {
     ent = "nuclear_reactor",
     model = "models/props_c17/consolebox01a.mdl",

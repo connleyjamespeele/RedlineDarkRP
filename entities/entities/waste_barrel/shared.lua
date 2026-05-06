@@ -8,6 +8,7 @@ ENT.Spawnable = true
 
 function ENT:SetupDataTables()
     self:NetworkVar("Int", 0, "WasteAmount")
+    self:NetworkVar("Bool", 0, "LeadLined")
 end
 
 if SERVER then
@@ -19,6 +20,7 @@ if SERVER then
         self:SetUseType(SIMPLE_USE)
 
         self:SetWasteAmount(10)
+        self:SetLeadLined(false)
 
         local phys = self:GetPhysicsObject()
         if phys:IsValid() then

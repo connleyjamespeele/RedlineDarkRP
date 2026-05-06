@@ -18,8 +18,13 @@ net.Receive("DisposeWaste", function(len, ply)
         end
     else
         -- Illegal disposal
-        ply:wanted(nil, "Illegal waste disposal")
+        local detectionChance = ent:GetLeadLined() and 0.4 or 1
+        if math.random() <= detectionChance then
+            ply:wanted(nil, "Illegal waste disposal")
+            ply:ChatPrint("Waste disposed illegally. You are now wanted!")
+        else
+            ply:ChatPrint("Illegal waste disposal succeeded quietly.")
+        end
         ent:Remove()
-        ply:ChatPrint("Waste disposed illegally. You are now wanted!")
     end
 end)
