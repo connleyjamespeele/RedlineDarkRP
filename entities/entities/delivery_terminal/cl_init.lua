@@ -1,0 +1,42 @@
+include("shared.lua")
+
+net.Receive("DeliveryTerminalMenu", function()
+    local frame = vgui.Create("DFrame")
+    frame:SetSize(300, 200)
+    frame:SetTitle("Delivery Terminal")
+    frame:Center()
+    frame:MakePopup()
+
+    local shortBtn = vgui.Create("DButton", frame)
+    shortBtn:SetText("Short Delivery")
+    shortBtn:SetPos(50, 50)
+    shortBtn:SetSize(200, 30)
+    shortBtn.DoClick = function()
+        net.Start("StartDelivery")
+        net.WriteString("short")
+        net.SendToServer()
+        frame:Close()
+    end
+
+    local mediumBtn = vgui.Create("DButton", frame)
+    mediumBtn:SetText("Medium Delivery")
+    mediumBtn:SetPos(50, 90)
+    mediumBtn:SetSize(200, 30)
+    mediumBtn.DoClick = function()
+        net.Start("StartDelivery")
+        net.WriteString("medium")
+        net.SendToServer()
+        frame:Close()
+    end
+
+    local largeBtn = vgui.Create("DButton", frame)
+    largeBtn:SetText("Large Delivery")
+    largeBtn:SetPos(50, 130)
+    largeBtn:SetSize(200, 30)
+    largeBtn.DoClick = function()
+        net.Start("StartDelivery")
+        net.WriteString("large")
+        net.SendToServer()
+        frame:Close()
+    end
+end)

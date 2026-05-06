@@ -1,137 +1,11 @@
-DarkRP.createShipment("Desert eagle", {
-    model = "models/weapons/w_pist_deagle.mdl",
-    entity = "weapon_deagle2",
-    price = 215,
-    amount = 10,
-    separate = true,
-    pricesep = 215,
-    noship = true,
-    allowed = {TEAM_GUN},
-    category = "Pistols",
-})
-
-DarkRP.createShipment("Fiveseven", {
-    model = "models/weapons/w_pist_fiveseven.mdl",
-    entity = "weapon_fiveseven2",
-    price = 0,
-    amount = 10,
-    separate = true,
-    pricesep = 205,
-    noship = true,
-    allowed = {TEAM_GUN},
-    category = "Pistols",
-})
-
-DarkRP.createShipment("Glock", {
-    model = "models/weapons/w_pist_glock18.mdl",
-    entity = "weapon_glock2",
-    price = 0,
-    amount = 10,
-    separate = true,
-    pricesep = 160,
-    noship = true,
-    allowed = {TEAM_GUN},
-    category = "Pistols",
-})
-
-DarkRP.createShipment("P228", {
-    model = "models/weapons/w_pist_p228.mdl",
-    entity = "weapon_p2282",
-    price = 0,
-    amount = 10,
-    separate = true,
-    pricesep = 185,
-    noship = true,
-    allowed = {TEAM_GUN},
-    category = "Pistols",
-})
-
-DarkRP.createShipment("AK47", {
-    model = "models/weapons/w_rif_ak47.mdl",
-    entity = "weapon_ak472",
-    price = 2450,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN},
-    category = "Rifles",
-})
-
-DarkRP.createShipment("MP5", {
-    model = "models/weapons/w_smg_mp5.mdl",
-    entity = "weapon_mp52",
-    price = 2200,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN},
-    category = "Rifles",
-})
-
-DarkRP.createShipment("M4", {
-    model = "models/weapons/w_rif_m4a1.mdl",
-    entity = "weapon_m42",
-    price = 2450,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN},
-    category = "Rifles",
-})
-
-DarkRP.createShipment("Mac 10", {
-    model = "models/weapons/w_smg_mac10.mdl",
-    entity = "weapon_mac102",
-    price = 2150,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN}
-})
-
-DarkRP.createShipment("Pump shotgun", {
-    model = "models/weapons/w_shot_m3super90.mdl",
-    entity = "weapon_pumpshotgun2",
-    price = 1750,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN},
-    category = "Shotguns",
-})
-
-DarkRP.createShipment("Sniper rifle", {
-    model = "models/weapons/w_snip_g3sg1.mdl",
-    entity = "ls_sniper",
-    price = 3750,
-    amount = 10,
-    separate = false,
-    pricesep = nil,
-    noship = false,
-    allowed = {TEAM_GUN},
-    category = "Snipers",
-})
-
-DarkRP.createEntity("Drug lab", {
-    ent = "drug_lab",
-    model = "models/props_lab/crematorcase.mdl",
-    price = 400,
-    max = 3,
-    cmd = "buydruglab",
-    allowed = {TEAM_GANG, TEAM_MOB}
-})
-
+-- Entities
 DarkRP.createEntity("Money printer", {
     ent = "money_printer",
     model = "models/props_c17/consolebox01a.mdl",
     price = 1000,
     max = 2,
-    cmd = "buymoneyprinter"
+    cmd = "buymoneyprinter",
+    category = "Citizens",
 })
 
 DarkRP.createEntity("Tip Jar", {
@@ -141,6 +15,82 @@ DarkRP.createEntity("Tip Jar", {
     max = 2,
     cmd = "tipjar",
     allowTools = true,
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Delivery Terminal", {
+    ent = "delivery_terminal",
+    model = "models/props_lab/monitor01a.mdl",
+    price = 500,
+    max = 5,
+    cmd = "buydeliveryterminal",
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Reactor", {
+    ent = "nuclear_reactor",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 5000,
+    max = 1,
+    cmd = "buyreactor",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Nuclear Terminal", {
+    ent = "nuclear_terminal",
+    model = "models/props_lab/monitor01b.mdl",
+    price = 1000,
+    max = 2,
+    cmd = "buynuclearterminal",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Cooling Barrel", {
+    ent = "cooling_barrel",
+    model = "models/props_c17/oildrum001.mdl",
+    price = 200,
+    max = 10,
+    cmd = "buycoolingbarrel",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Waste Barrel", {
+    ent = "waste_barrel",
+    model = "models/props_c17/oildrum001_explosive.mdl",
+    price = 300,
+    max = 10,
+    cmd = "buywastebarrel",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Nuclear Worker", {
+    ent = "nuclear_worker",
+    model = "models/player/breen.mdl",
+    price = 1500,
+    max = 3,
+    cmd = "buynuclearworker",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createEntity("Nuclear Disposal NPC", {
+    ent = "nuclear_disposal_npc",
+    model = "models/player/breen.mdl",
+    price = 2000,
+    max = 2,
+    cmd = "buydisposalnpc",
+    allowed = {TEAM_NUCLEAR_WORKER},
+    category = "Citizens",
+})
+
+DarkRP.createWeapon("Umbrella", {
+    model = "models/weapons/w_knife_t.mdl",
+    price = 100,
+    category = "Citizens",
 })
 
 DarkRP.createEntity("Gun lab", {
@@ -162,6 +112,7 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
         allowed = TEAM_COOK
     })
 
+    -- Food Shipments
     DarkRP.createShipment("Banana", {
         model = "models/props/cs_italy/bananna.mdl",
         entity = "spawned_food",
@@ -189,74 +140,66 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
     })
 end
 
+-- Categories
 DarkRP.createCategory{
-    name = "Other",
+    name = "Citizens",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 1,
+}
+
+DarkRP.createCategory{
+    name = "Emergency Services",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(255, 0, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 2,
+}
+
+DarkRP.createCategory{
+    name = "Criminal",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(255, 0, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 3,
+}
+
+DarkRP.createCategory{
+    name = "Government",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(0, 0, 255, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 4,
+}
+
+DarkRP.createCategory{
+    name = "Admin",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(255, 255, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 5,
+}
+
+DarkRP.createCategory{
+    name = "Citizens",
+    categorises = "shipments",
+    startExpanded = true,
+    color = Color(0, 107, 0, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 1,
+}
+
+DarkRP.createCategory{
+    name = "Citizens",
     categorises = "entities",
     startExpanded = true,
     color = Color(0, 107, 0, 255),
     canSee = fp{fn.Id, true},
-    sortOrder = 255,
-}
-
-DarkRP.createCategory{
-    name = "Other",
-    categorises = "shipments",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 255,
-}
-
-DarkRP.createCategory{
-    name = "Rifles",
-    categorises = "shipments",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 100,
-}
-
-DarkRP.createCategory{
-    name = "Shotguns",
-    categorises = "shipments",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 101,
-}
-
-DarkRP.createCategory{
-    name = "Snipers",
-    categorises = "shipments",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 102,
-}
-
-DarkRP.createCategory{
-    name = "Pistols",
-    categorises = "weapons",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 100,
-}
-
-DarkRP.createCategory{
-    name = "Other",
-    categorises = "weapons",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 255,
-}
-
-DarkRP.createCategory{
-    name = "Other",
-    categorises = "weapons",
-    startExpanded = true,
-    color = Color(0, 107, 0, 255),
-    canSee = fp{fn.Id, true},
-    sortOrder = 255,
+    sortOrder = 1,
 }
