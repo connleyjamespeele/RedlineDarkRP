@@ -56,9 +56,10 @@ local function BuildInventoryMenu(data)
 
     local y = 70
     if data.suit then
+        local suitRarity = data.suit.rarity and string.upper(data.suit.rarity:gsub("_", " ")) or "COMMON"
         local suitLabel = vgui.Create("DLabel", inventoryFrame)
         suitLabel:SetPos(16, y)
-        suitLabel:SetText(string.format("Equipped Suit: %s (Durability %d)", data.suit.name, data.suit.durability))
+        suitLabel:SetText(string.format("Equipped Suit: %s (%s) - Durability %d", data.suit.name, suitRarity, data.suit.durability))
         suitLabel:SetTextColor(Color(255, 200, 0))
         suitLabel:SetFont("DermaDefaultBold")
         suitLabel:SizeToContents()
@@ -110,16 +111,32 @@ local function BuildInventoryMenu(data)
         details:SetTextColor(Color(200, 200, 200))
         details:SizeToContents()
 
+        local rarityText = item.rarity and string.upper(item.rarity:gsub("_", " ")) or "COMMON"
+        local rarityColor = Color(200, 200, 200)
+        if item.rarity == "uncommon" then rarityColor = Color(100, 220, 100)
+        elseif item.rarity == "rare" then rarityColor = Color(100, 180, 255)
+        elseif item.rarity == "legendary" then rarityColor = Color(200, 120, 255)
+        elseif item.rarity == "god" then rarityColor = Color(255, 200, 60)
+        elseif item.rarity == "ultra_god" then rarityColor = Color(255, 120, 180)
+        elseif item.rarity == "admin" then rarityColor = Color(255, 60, 60)
+        end
+
+        local rarityLabel = vgui.Create("DLabel", panel)
+        rarityLabel:SetPos(8, 44)
+        rarityLabel:SetText("Rarity: " .. rarityText)
+        rarityLabel:SetTextColor(rarityColor)
+        rarityLabel:SizeToContents()
+
         if item.durability then
             local dur = vgui.Create("DLabel", panel)
-            dur:SetPos(8, 44)
+            dur:SetPos(8, 60)
             dur:SetText("Durability: " .. item.durability)
             dur:SetTextColor(Color(200, 200, 200))
             dur:SizeToContents()
         end
 
         local button = vgui.Create("DButton", panel)
-        button:SetPos(8, 60)
+        button:SetPos(8, item.durability and 84 or 60)
         button:SetSize(120, 24)
         button:SetText(item.type == "suit" and "Equip" or "Use")
         button.DoClick = function()

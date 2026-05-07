@@ -1,9 +1,60 @@
+DarkRP.InventoryRarities = DarkRP.InventoryRarities or {
+    common = {
+        name = "Common",
+        color = Color(180, 180, 180),
+        bonus = 1,
+    },
+    uncommon = {
+        name = "Uncommon",
+        color = Color(100, 220, 100),
+        bonus = 1.05,
+    },
+    rare = {
+        name = "Rare",
+        color = Color(100, 180, 255),
+        bonus = 1.10,
+    },
+    legendary = {
+        name = "Legendary",
+        color = Color(200, 120, 255),
+        bonus = 1.20,
+    },
+    god = {
+        name = "God",
+        color = Color(255, 200, 60),
+        bonus = 1.35,
+    },
+    ultra_god = {
+        name = "Ultra God",
+        color = Color(255, 120, 180),
+        bonus = 1.50,
+    },
+    admin = {
+        name = "Admin",
+        color = Color(255, 60, 60),
+        bonus = 2,
+    },
+}
+
+function DarkRP.getInventoryRarity(rarity)
+    return DarkRP.InventoryRarities[rarity] or DarkRP.InventoryRarities.common
+end
+
+function DarkRP.getInventoryRarityName(rarity)
+    return DarkRP.getInventoryRarity(rarity).name
+end
+
+function DarkRP.getInventoryRarityColor(rarity)
+    return DarkRP.getInventoryRarity(rarity).color
+end
+
 DarkRP.InventoryItems = DarkRP.InventoryItems or {
     suit_redline = {
         id = "suit_redline",
         name = "Redline Suit",
         description = "A crimson protective suit built for frontline operators.",
         type = "suit",
+        rarity = "uncommon",
         armor = 25,
         durability = 100,
         tier = 1,
@@ -16,6 +67,7 @@ DarkRP.InventoryItems = DarkRP.InventoryItems or {
         name = "Reinforced Redline Suit",
         description = "A stronger suit that slows damage and holds up longer.",
         type = "suit",
+        rarity = "rare",
         armor = 40,
         durability = 150,
         tier = 2,
@@ -28,6 +80,7 @@ DarkRP.InventoryItems = DarkRP.InventoryItems or {
         name = "Advanced Redline Armor",
         description = "A top-tier protective suit tuned for nuclear plant operations.",
         type = "suit",
+        rarity = "legendary",
         armor = 55,
         durability = 220,
         tier = 3,
@@ -39,6 +92,7 @@ DarkRP.InventoryItems = DarkRP.InventoryItems or {
         name = "Energy Drink",
         description = "A stimulant that restores health instantly.",
         type = "consumable",
+        rarity = "common",
         heal = 30,
         price = 150,
     },
@@ -47,6 +101,7 @@ DarkRP.InventoryItems = DarkRP.InventoryItems or {
         name = "Redline Cocktail",
         description = "A bar specialty that restores health and adds a burst of armor.",
         type = "consumable",
+        rarity = "uncommon",
         heal = 20,
         armor = 10,
         price = 100,
@@ -56,6 +111,7 @@ DarkRP.InventoryItems = DarkRP.InventoryItems or {
         name = "Backpack Expansion",
         description = "Install this to add two extra inventory slots.",
         type = "upgrade",
+        rarity = "common",
         price = 400,
     },
 }

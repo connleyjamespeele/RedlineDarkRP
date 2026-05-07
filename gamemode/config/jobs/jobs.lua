@@ -303,9 +303,16 @@ Use the Laundering Terminal and underground networks to turn illegal profits int
 TEAM_DRUG_MANUFACTURER = DarkRP.createJob("Drug Manufacturer", {
     color = Color(40, 40, 40, 255),
     model = "models/player/leet.mdl",
-    description = [[Produce illegal drugs and control the supply chain.
+    description = [[Produce illegal drugs and control a dangerous multi-path supply chain.
 
-Start with low-tier strains in pots, upgrade a Storage Locker to unlock better recipes, and use Drying Racks and the Combiner to cook stronger meth. Gather materials like aluminum and methane to craft higher-value products and keep your locker progression persistent.]],
+The workflow is split into strands and stages:
+- Grow default strains like Blu NTS or Weds in Drug Pots.
+- Dry the harvest on Drying Racks, then combine and refine it in the Combiner.
+- Send product through the Freezer, break it up, and package it for sale.
+- Higher-tier strands require extra growth, enhancers, rolling, and different refinement workflows.
+- Choose your path: cheap street clips, hard crystal, or premium packaged exports.
+
+This is a zero-salary criminal job built around progression, rare recipes, and risk.]],
     weapons = {},
     command = "drugmanufacturer",
     max = 2,

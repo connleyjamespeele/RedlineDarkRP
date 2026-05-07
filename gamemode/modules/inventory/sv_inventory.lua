@@ -67,6 +67,7 @@ function PLAYER:AddRedlineItem(itemID, customData)
         id = definition.id,
         name = definition.name,
         type = definition.type,
+        rarity = definition.rarity or "common",
     }
     if customData then
         for k, v in pairs(customData) do
@@ -90,16 +91,22 @@ function PLAYER:EquipRedlineSuit(itemID)
         if not self:UnequipRedlineSuit() then return false end
     end
 
+    local rarity = definition.rarity or "common"
+    local bonus = DarkRP.getInventoryRarity(rarity).bonus
+    local armor = math.max(0, math.ceil((definition.armor or 0) * bonus))
+    local durability = entry.durability or math.max(1, math.ceil((definition.durability or 0) * bonus))
+
     self:RemoveRedlineItemByIndex(index)
     self.RedlineSuit = {
         id = definition.id,
         name = definition.name,
-        armor = definition.armor,
-        durability = entry.durability or definition.durability,
+        armor = armor,
+        durability = durability,
         tier = definition.tier,
         nextTier = definition.nextTier,
+        rarity = rarity,
     }
-    self:SetArmor(definition.armor)
+    self:SetArmor(armor)
     return true
 end
 
@@ -144,19 +151,24 @@ function PLAYER:UseRedlineItem(itemID)
     local definition = DarkRP.getInventoryItem(entry.id)
     if not definition then return false, "Invalid item." end
 
+    local rarity = entry.rarity or definition.rarity or "common"
+    local bonus = DarkRP.getInventoryRarity(rarity).bonus
+
     if definition.type == "consumable" then
         if definition.heal then
-            self:SetHealth(math.min(self:GetMaxHealth(), self:Health() + definition.heal + (entry.bonus or 0)))
+            local heal = math.ceil((definition.heal + (entry.bonus or 0)) * bonus)
+            self:SetHealth(math.min(self:GetMaxHealth(), self:Health() + heal))
         end
         if definition.armor then
-            self:SetArmor(math.min(100, self:Armor() + definition.armor + (entry.bonus or 0)))
+            local armor = math.ceil((definition.armor + (entry.bonus or 0)) * bonus)
+            self:SetArmor(math.min(100, self:Armor() + armor))
         end
-        DarkRP.notify(self, 0, 4, "You used " .. definition.name .. ".")
+        DarkRP.notify(self, 0, 4, "You used " .. definition.name .. " [" .. DarkRP.getInventoryRarityName(rarity) .. "].")
     elseif definition.type == "upgrade" then
         self.RedlineInventory.capacity = self.RedlineInventory.capacity + 2
         DarkRP.notify(self, 0, 5, "Inventory capacity increased to " .. self.RedlineInventory.capacity .. ".")
     else
-        return false, "This item cannot be used directly." 
+        return false, "This item cannot be used directly."
     end
 
     self:RemoveRedlineItemByIndex(index)
