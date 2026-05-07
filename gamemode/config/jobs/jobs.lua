@@ -270,7 +270,21 @@ The Agri-World: Focuses on Population and Health. It generates moderate money bu
 
 The Tax Haven: A colony with no industry and low population, but a massive "Economic Goodness" multiplier. It turns small amounts of growth into huge payouts.
 
-The Worlds should be in a menu.]],
+The Worlds should be in a menu.
+
+4. Advanced Features
+
+Rebellion Management: Some colonies might rebel if loyalty is too low. Suppress with military upgrades.
+
+Conquest Expansion: Once you have 5 colonies, unlock the ability to conquer new worlds (new map regions).
+
+Military Upgrades: Build armies, fleets, and defense systems for your colonies.
+
+Research Labs: Unlock new suit tiers and technologies.
+
+Diplomacy: Trade resources with other Thragg players or NPCs for mutual benefit.
+
+Asteroid Mining: Extract resources from space to boost economy.]],
     weapons = {},
     command = "thragg",
     max = 1,
@@ -352,6 +366,44 @@ Supplier: They appear around the map in dark areas and Black Market Dealers can 
     category = "Citizens",
 })
 
+TEAM_SOLAR_TECHNICIAN = DarkRP.createJob("Solar Technician", {
+    color = Color(255, 200, 0, 255),
+    model = "models/player/magnusson.mdl",
+    description = [[Harness solar energy and generate electricity.
+
+Entities/Weapons
+
+Solar Panel: Generates electricity during daylight hours. Place multiple panels for better output.
+
+Battery: Stores generated electricity. Upgradeable:
+- Base: 75 watts capacity
+- Upgrade 1: +50 watts (125 total)
+- Upgrade 2: +65 watts (190 total)
+
+Solar Converter: Links solar panels to rechargers. Must be placed between them or explodes.
+
+Recharger: Charging station where batteries are inserted to store electricity from panels.
+
+Management Computer: Manage your system, purchase upgrades, and monitor energy output.
+
+Wires: Connect solar panels, converters, and rechargers to create an energy network.
+
+Special Features:
+- Sell charged batteries to the Eco-Friend NPC for profit.
+- Energy generation is weather and time-dependent.
+- Upgrades improve efficiency and storage capacity.
+- Build networks to maximize energy output.]],
+    weapons = {"wires"},
+    command = "solartechnician",
+    max = 3,
+    salary = 75,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+})
+
 TEAM_BANK_MANAGER = DarkRP.createJob("Bank Manager", {
     color = Color(0, 100, 200, 255),
     model = "models/player/magnusson.mdl",
@@ -398,6 +450,139 @@ Performer SWEP: Target players/NPCs to offer a 'dance' for $500. If accepted, pl
     category = "Citizens",
 })
 
+TEAM_GROVESTREET = DarkRP.createJob("Grove Street Gangster", {
+    color = Color(0, 200, 0, 255),
+    model = "models/player/group01/male_01.mdl",
+    description = [[Join the Grove Street Gangsters - a community-focused gang.
+
+You protect your territory and run legitimate businesses. You are STRONGLY against meth and hard drugs in your area.
+
+Features:
+- Protection racket income
+- Community businesses (clubs, bars)
+- Territory control and expansion
+- Gang wars with rival gangs
+- Gang vehicle access
+- Custom gang apparel
+- Community investments
+
+Rules:
+- NO meth production
+- NO hard drugs
+- Protection and enforcement allowed
+- Territory wars with Ballas, Vagos, Triads
+- Honor the code or face consequences]],
+    weapons = {},
+    command = "grovestreet",
+    max = 8,
+    salary = 100,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangs",
+})
+
+TEAM_BALLAS = DarkRP.createJob("Ballas", {
+    color = Color(200, 0, 200, 255),
+    model = "models/player/group01/male_04.mdl",
+    description = [[Join the Ballas - ruthless and profit-driven.
+
+You profit from EVERYTHING - meth, drugs, guns, protection. No moral code, pure profit.
+
+Features:
+- Meth lab ownership
+- Drug distribution network (HIGH INCOME)
+- Gun trafficking
+- Protection racket ($$$) 
+- Territory control
+- Gang wars and turf expansion
+- Underground casino operations
+
+Business Operations:
+- Meth production ($$$$$)
+- Drug dealing (continuous income)
+- Gun running (bulk sales)
+- Protection (aggressive pricing)
+- Turf control bonuses
+- Alliance system]],
+    weapons = {},
+    command = "ballas",
+    max = 10,
+    salary = 150,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangs",
+})
+
+TEAM_VAGOS = DarkRP.createJob("Vagos", {
+    color = Color(150, 150, 0, 255),
+    model = "models/player/group01/male_02.mdl",
+    description = [[Join the Vagos - street-level hustlers with big money.
+
+You focus on high-volume drug distribution and street protection. Fast money through constant operations.
+
+Features:
+- Drug distribution network (VERY HIGH INCOME)
+- Street-level protection
+- Drug cartel operations
+- Turf wars
+- High-volume earning potential
+- Underground network
+
+Core Operations:
+- Drug labs and distribution ($$$$$)
+- Street tax (every player pays in territory)
+- Protection services
+- Territory expansion wars
+- Gang hideouts
+- Resource trafficking]],
+    weapons = {},
+    command = "vagos",
+    max = 9,
+    salary = 130,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangs",
+})
+
+TEAM_TRIADS = DarkRP.createJob("Triads", {
+    color = Color(200, 100, 0, 255),
+    model = "models/player/combine_soldier.mdl",
+    description = [[Join the Triads - sophisticated organized crime.
+
+You specialize in money laundering, counterfeiting, and underground gambling. High-stakes operations with MASSIVE payouts.
+
+Features:
+- Money laundering ($$$$$)
+- Counterfeiting operations ($$$$$)
+- Underground casinos and gambling
+- International smuggling
+- Protection services (premium)
+- White-collar crime
+
+Elite Operations:
+- Counterfeit currency production (VERY HIGH INCOME)
+- Money laundering network (continuous passive income)
+- High-stakes gambling operations (weekly tournaments)
+- Diplomatic immunity through power
+- Legitimate front businesses
+- Shadow economy control]],
+    weapons = {},
+    command = "triads",
+    max = 7,
+    salary = 180,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Gangs",
+})
+
 TEAM_CIVILIAN = TEAM_CIVILIAN or -1
 TEAM_CITIZEN = TEAM_CIVILIAN
 TEAM_NUCLEAR_WORKER = TEAM_NUCLEAR_WORKER or -1
@@ -409,6 +594,7 @@ TEAM_THRAGG = TEAM_THRAGG or -1
 TEAM_GUN_DEALER = TEAM_GUN_DEALER or -1
 TEAM_BLACK_MARKET_DEALER = TEAM_BLACK_MARKET_DEALER or -1
 
+TEAM_SOLAR_TECHNICIAN = TEAM_SOLAR_TECHNICIAN or -1
 TEAM_BANK_MANAGER = TEAM_BANK_MANAGER or -1
 TEAM_PERFORMER = TEAM_PERFORMER or -1
 
