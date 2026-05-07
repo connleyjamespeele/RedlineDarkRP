@@ -14,27 +14,95 @@ function ENT:Initialize()
 
     self.order = nil
     self.eating = false
+    self.state = "idle" -- idle, ordering, waiting, eating, paying, leaving
+    self.stateTimer = 0
+    self.targetTable = nil
+    self.targetChef = nil
+    self.targetBartender = nil
 end
 
 function ENT:Use(activator, caller)
-    -- Perhaps interact
+    -- Perhaps interact with player
 end
 
 function ENT:Think()
-    -- AI for ordering, eating, paying
+    self:UpdateAI()
+end
+
+function ENT:UpdateAI()
+    self.stateTimer = self.stateTimer + FrameTime()
+
+    if self.state == "idle" then
+        -- Look for a table or bar
+        local tables = ents.FindByClass("restaurant_table")
+        if #tables > 0 then
+            self.targetTable = tables[math.random(#tables)]
+            self.state = "moving_to_table"
+function ENT:MoveToPos(pos)
+    self:SetLastPosition(pos)
+    self:SetSchedule(SCHED_FORCED_GO)
+end
+        end
+    elseif self.state == "moving_to_table" then
+        if self:GetPos():Distance(self.targetTable:GetPos()) < 100 then
+            self.state = "ordering"
+            self.stateTimer = 0
+        end
+    elseif self.state == "ordering" then
+        if self.stateTimer > 5 then -- Wait 5 seconds
+            self:OrderFood()
+            self.state = "waiting"
+            self.stateTimer = 0
+        end
+    elseif self.state == "waiting" then
+        -- Wait for food
+        if self.eating then
+            self.state = "eating"
+            self.stateTimer = 0
+        elseif self.stateTimer > 30 then -- Timeout
+            self.state = "leaving"
+        end
+    elseif self.state == "eating" then
+        if self.stateTimer > 60 then -- Eat for 1 minute
+            self:FinishEating()
+            self.state = "paying"
+            self.stateTimer = 0
+        end
+    elseif self.state == "paying" then
+        if self.stateTimer > 5 then
+            self.state = "leaving"
+            self.stateTimer = 0
+        end
+    elseif self.state == "leaving" then
+        if self.stateTimer > 10 then
+            self:Remove()
+        end
+    end
+end
+
+function ENT:OrderFood()
+    local chefs = ents.FindByClass("chef_npc")
+    if #chefs > 0 then
+        self.targetChef = chefs[math.random(#chefs)]
+        self.targetChef:ReceiveOrder(self, "random_food")
+        self.order = "random_food"
+    end
 end
 
 function ENT:ReceivePlate()
     self.eating = true
-    timer.Simple(60, function() self:FinishEating() end) -- 1 minute to eat
 end
 
 function ENT:FinishEating()
     self.eating = false
-    -- Pay and leave
+    -- Pay
     local owner = self:Getowning_ent()
     if IsValid(owner) then
-        owner:addMoney(50) -- Example payout
+        owner:addMoney(50)
     end
-    self:Remove()
+end
+
+function ENT:MoveToPos(pos)
+    self:SetLastPosition(pos)
+    self:SetSchedule(SCHED_FORCED_GO)
 end

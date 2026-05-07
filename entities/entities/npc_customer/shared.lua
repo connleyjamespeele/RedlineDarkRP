@@ -16,12 +16,12 @@ function ENT:Initialize()
     }
     
     local stats = {
-        regular = {spend = 150, tip = 30, bartime = 20, watchtime = 60},
-        tourist = {spend = 300, tip = 80, bartime = 30, watchtime = 90},
-        vip = {spend = 750, tip = 250, bartime = 40, watchtime = 120},
+        regular = {spend = 5500, tip = 30, bartime = 20, watchtime = 60},
+        tourist = {spend = 3000, tip = 80, bartime = 30, watchtime = 90},
+        vip = {spend = 8500, tip = 250, bartime = 40, watchtime = 120},
         troublemaker = {spend = 50, tip = -20, bartime = 15, watchtime = 30},
-        party_group = {spend = 500, tip = 150, bartime = 35, watchtime = 100},
-        businessperson = {spend = 600, tip = 200, bartime = 45, watchtime = 110}
+        party_group = {spend = 4500, tip = 150, bartime = 35, watchtime = 100},
+        businessperson = {spend = 7000, tip = 200, bartime = 45, watchtime = 110}
     }
     
     self:SetModel(models[type] or models.regular)
