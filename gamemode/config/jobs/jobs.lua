@@ -352,6 +352,52 @@ Supplier: They appear around the map in dark areas and Black Market Dealers can 
     category = "Citizens",
 })
 
+TEAM_BANK_MANAGER = DarkRP.createJob("Bank Manager", {
+    color = Color(0, 100, 200, 255),
+    model = "models/player/magnusson.mdl",
+    description = [[Manage a bank, handle customer transactions, loans, and investments.
+
+Entities/Weapons
+
+Computer: Management console for a mini stock market and bank upgrades.
+
+Register: NPCs spawn and request services - Withdrawals (from vault), Deposits (into vault), and Loans (borrow with 10% interest, repaid over 6 minutes).
+
+Vault: Stores bank money. You earn 10% of vault value every 5 minutes (non-subtractive). Starts with $5000; rejuvenates to $5000 if emptied. Drops money if destroyed.
+
+Clerk: NPC assistant that processes NPC orders.]],
+    weapons = {},
+    command = "bankmanager",
+    max = 2,
+    salary = 80,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+})
+
+TEAM_PERFORMER = DarkRP.createJob("Performer", {
+    color = Color(255, 20, 147, 255),
+    model = "models/player/alyx.mdl",
+    description = [[Entertain customers as a Performer.
+
+Entities/Weapons
+
+Stage: Place this entity, press E to mount and perform the 'muscle' animation. Press E again to dismount. NPCs tip while performing.
+
+Performer SWEP: Target players/NPCs to offer a 'dance' for $500. If accepted, plays sound, black screen effect, and you get paid.]],
+    weapons = {"weapon_performer"},
+    command = "performer",
+    max = 4,
+    salary = 50,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    candemote = false,
+    category = "Citizens",
+})
+
 TEAM_CIVILIAN = TEAM_CIVILIAN or -1
 TEAM_CITIZEN = TEAM_CIVILIAN
 TEAM_NUCLEAR_WORKER = TEAM_NUCLEAR_WORKER or -1
@@ -362,6 +408,9 @@ TEAM_CLUB_OWNER = TEAM_CLUB_OWNER or -1
 TEAM_THRAGG = TEAM_THRAGG or -1
 TEAM_GUN_DEALER = TEAM_GUN_DEALER or -1
 TEAM_BLACK_MARKET_DEALER = TEAM_BLACK_MARKET_DEALER or -1
+
+TEAM_BANK_MANAGER = TEAM_BANK_MANAGER or -1
+TEAM_PERFORMER = TEAM_PERFORMER or -1
 
 GAMEMODE.DefaultTeam = TEAM_CIVILIAN
 
