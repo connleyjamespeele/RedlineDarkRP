@@ -1,4 +1,5 @@
 -- Entities
+-- General citizen entities
 DarkRP.createEntity("Money printer", {
     ent = "money_printer",
     model = "models/props_c17/consolebox01a.mdl",
@@ -37,6 +38,7 @@ DarkRP.createEntity("Bar Counter", {
     category = "Service",
 })
 
+-- Nuclear facility entities
 DarkRP.createEntity("Reactor", {
     ent = "nuclear_reactor",
     model = "models/props_c17/consolebox01a.mdl",
@@ -97,6 +99,7 @@ DarkRP.createEntity("Nuclear Disposal NPC", {
     category = "Citizens",
 })
 
+-- Restaurant / Chef entities
 DarkRP.createEntity("Freezer", {
     ent = "freezer",
     model = "models/props_c17/FurnitureFridge001a.mdl",
@@ -230,6 +233,7 @@ DarkRP.createEntity("Mining Node", {
     category = "Citizens",
 })
 
+-- Club owner entities
 DarkRP.createEntity("Manager Computer", {
     ent = "manager_computer",
     model = "models/props_lab/monitor01a.mdl",
@@ -290,6 +294,7 @@ DarkRP.createEntity("Booth", {
     category = "Citizens",
 })
 
+-- Thragg entities
 DarkRP.createEntity("Vat Suits", {
     ent = "vat_suits",
     model = "models/props_c17/consolebox01a.mdl",
@@ -310,6 +315,7 @@ DarkRP.createEntity("Conqueror Globe", {
     category = "Citizens",
 })
 
+-- Gun dealer entities
 DarkRP.createEntity("Gun Lab", {
     ent = "gun_lab",
     model = "models/props_c17/TrapPropeller_Engine.mdl",
@@ -317,7 +323,7 @@ DarkRP.createEntity("Gun Lab", {
     max = 2,
     cmd = "buygunlab",
     allowed = {TEAM_GUN_DEALER},
-    category = "Citizens",
+    category = "Gangs",
 })
 
 DarkRP.createEntity("Suit Lab", {
@@ -327,7 +333,7 @@ DarkRP.createEntity("Suit Lab", {
     max = 2,
     cmd = "buysuitlab",
     allowed = {TEAM_GUN_DEALER},
-    category = "Citizens",
+    category = "Gangs",
 })
 
 DarkRP.createEntity("Dealer Register", {
@@ -337,9 +343,10 @@ DarkRP.createEntity("Dealer Register", {
     max = 1,
     cmd = "buydealerregister",
     allowed = {TEAM_GUN_DEALER},
-    category = "Citizens",
+    category = "Gangs",
 })
 
+-- Black Market entities
 DarkRP.createEntity("Black Market Lab", {
     ent = "black_market_lab",
     model = "models/props_c17/consolebox01a.mdl",
@@ -347,7 +354,89 @@ DarkRP.createEntity("Black Market Lab", {
     max = 1,
     cmd = "buyblackmarketlab",
     allowed = {TEAM_BLACK_MARKET_DEALER},
-    category = "Citizens",
+    category = "Gangs",
+})
+
+-- Drug manufacturer entities
+DarkRP.createEntity("Drug Pot", {
+    ent = "drug_pot",
+    model = "models/props_junk/garbage_metalcan002a.mdl",
+    price = 120,
+    max = 12,
+    cmd = "buydrugpot",
+    allowed = {TEAM_DRUG_MANUFACTURER},
+    category = "Drug Manufacture",
+})
+
+DarkRP.createEntity("Drug Storage Locker", {
+    ent = "drug_storage_locker",
+    model = "models/props_junk/wood_crate001a.mdl",
+    price = 1500,
+    max = 2,
+    cmd = "buydrugstoragelocker",
+    allowed = {TEAM_DRUG_MANUFACTURER},
+    category = "Drug Manufacture",
+})
+
+DarkRP.createEntity("Drying Rack", {
+    ent = "drying_rack",
+    model = "models/props_wasteland/kitchen_shelf001a.mdl",
+    price = 300,
+    max = 4,
+    cmd = "buydryingrack",
+    allowed = {TEAM_DRUG_MANUFACTURER},
+    category = "Drug Manufacture",
+})
+
+DarkRP.createEntity("Combiner", {
+    ent = "drug_combiner",
+    model = "models/props_lab/reciever01b.mdl",
+    price = 900,
+    max = 2,
+    cmd = "buydrugcombiner",
+    allowed = {TEAM_DRUG_MANUFACTURER},
+    category = "Drug Manufacture",
+})
+
+-- Gang money-making entities
+DarkRP.createEntity("Protection Rack", {
+    ent = "protection_rack",
+    model = "models/props_wasteland/laundry_washer002.mdl",
+    price = 800,
+    max = 1,
+    cmd = "buyprotectionsrack",
+    allowed = {TEAM_GROVESTREET},
+    category = "Gangs",
+})
+
+DarkRP.createEntity("Ballas Control Hub", {
+    ent = "ballas_control_hub",
+    model = "models/props_c17/consolebox01a.mdl",
+    price = 1500,
+    max = 1,
+    cmd = "buyballascontrolhub",
+    allowed = {TEAM_BALLAS},
+    category = "Gangs",
+})
+
+DarkRP.createEntity("Street Tax Station", {
+    ent = "vagos_tax_station",
+    model = "models/props_lab/noticeboard.mdl",
+    price = 700,
+    max = 2,
+    cmd = "buyvagostaxstation",
+    allowed = {TEAM_VAGOS},
+    category = "Gangs",
+})
+
+DarkRP.createEntity("Laundering Terminal", {
+    ent = "triads_laundering_terminal",
+    model = "models/props_lab/reciever01b.mdl",
+    price = 1200,
+    max = 1,
+    cmd = "buylaunderingterminal",
+    allowed = {TEAM_TRIADS},
+    category = "Gangs",
 })
 
 DarkRP.createEntity("Gun lab", {
@@ -459,4 +548,22 @@ DarkRP.createCategory{
     color = Color(0, 107, 0, 255),
     canSee = fp{fn.Id, true},
     sortOrder = 1,
+}
+
+DarkRP.createCategory{
+    name = "Gangs",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(150, 0, 150, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 2,
+}
+
+DarkRP.createCategory{
+    name = "Drug Manufacture",
+    categorises = "entities",
+    startExpanded = true,
+    color = Color(80, 80, 80, 255),
+    canSee = fp{fn.Id, true},
+    sortOrder = 3,
 }
