@@ -34,6 +34,7 @@ function ENT:Think()
         if not IsValid(self) then return end
         local CheckAround = ents.FindInSphere(self:GetPos(), 45)
         local Income = self:GetMoneyGiveAmount() -- Start with the base money give amount
+        self:SetIncome(1000) -- Update the income network variable with the base amount
         for _, ent in ipairs(CheckAround) do
             if ent then
                 print("Found entity: " .. tostring(ent))
