@@ -17,3 +17,4 @@ Gameplay:
 - One player opens a challenge with a bet amount and a call (heads/tails).
 - Another player accepts the challenge.
 - The winner takes the full pot.
+- why am i so lonely  for my ownnn!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! im skalonly for  my  ownnnnnnnnnnnnnnggeegegege
