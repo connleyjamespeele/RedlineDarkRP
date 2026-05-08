@@ -6,6 +6,7 @@ function ENT:Initialize()
     self:SetMoveType(MOVETYPE_VPHYSICS)
     self:SetSolid(SOLID_VPHYSICS)
 
+    self:SetDelayBeforeIncome(30) 
     self:SetMoneyGiveAmount(100) -- Set the default money give amount to 100
 end
 
@@ -22,3 +23,8 @@ function ENT:Use(activator, caller)
         DarkRP.notify(activator, 1, 4, "This money box is empty.")
     end
 end
+
+function ENT:Think()
+    task.Wait(self:GetDelayBeforeIncome()) 
+    self:SetMoneyGiveAmount(self:GetMoneyGiveAmount() + 100)
+end 

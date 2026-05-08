@@ -7,4 +7,5 @@ ENT.Spawnable = true
 
 function ENT:SetupDataTables()
     self:NetworkVar("Int", 1, "MoneyGiveAmount")
+    self:NetworkVar("Int", 1, "DelayBeforeIncome")
 end
