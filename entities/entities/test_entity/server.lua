@@ -11,6 +11,10 @@ function ENT:Initialize()
 end
 
 function ENT:Use(activator, caller)
+    print("Entity used by: " .. tostring(activator))
+    print("MoneyGiveAmount: " .. tostring(self:GetMoneyGiveAmount()))
+    print(caller)
+
     if CLIENT then return end
     if not IsValid(activator) or not activator:IsPlayer() then return end
 
@@ -25,6 +29,8 @@ function ENT:Use(activator, caller)
 end
 
 function ENT:Think()
-    task.Wait(self:GetDelayBeforeIncome()) 
-    self:SetMoneyGiveAmount(self:GetMoneyGiveAmount() + 100)
+    timer.Create("MoneyBoxIncome_" .. self:EntIndex(), self:GetDelayBeforeIncome(), 0, function()
+        if not IsValid(self) then return end
+        self:SetMoneyGiveAmount(self:GetMoneyGiveAmount() + 100) 
+    end)
 end 
