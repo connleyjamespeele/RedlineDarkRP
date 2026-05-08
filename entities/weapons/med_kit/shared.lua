@@ -50,17 +50,17 @@ function SWEP:PrimaryAttack()
     for _, v in ipairs(player.GetAll()) do
         local maxhealth = v:GetMaxHealth() or 100
         local targetShootPos = v:GetShootPos()
-        if v == Owner or targetShootPos:DistToSqr(shootPos) > 7225 or v:Health() >= maxhealth or not v:Alive() then continue end
+        if v == Owner or targetShootPos:DistToSqr(shootPos) > 7225 or v:Health() >= maxhealth or not v:Alive() then 
+            local direction = targetShootPos - shootPos
+            direction:Normalize()
+            local dot = direction:Dot(aimVec)
 
-        local direction = targetShootPos - shootPos
-        direction:Normalize()
-        local dot = direction:Dot(aimVec)
-
-        -- Looking more in the direction of this player
-        if dot > lastDot then
-            lastDot = dot
-            found = v
-        end
+            -- Looking more in the direction of this player
+            if dot > lastDot then
+                lastDot = dot
+                found = v
+            end
+         end
     end
     Owner:LagCompensation(false)
 

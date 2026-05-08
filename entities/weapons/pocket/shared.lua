@@ -97,7 +97,7 @@ function SWEP:SecondaryAttack()
     local maxK = 0
 
     for k in pairs(Owner:getPocketItems()) do
-        if k < maxK then continue end
+        if k < maxK then break end
         maxK = k
     end
 

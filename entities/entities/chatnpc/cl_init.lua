@@ -3,7 +3,7 @@ include("shared.lua")
 function ENT:Draw()
     self:DrawModel()
 
-    if self:GetChatMessage() != "" then
+    if self:GetChatMessage() ~= "" then
         local pos = self:GetPos() + Vector(0, 0, 80)
         local ang = self:GetAngles()
         ang:RotateAroundAxis(ang:Up(), 90)

@@ -18,8 +18,8 @@ if SERVER then
             net.Start("Redline_BarMenuOpen")
                 net.WriteEntity(self)
                 net.WriteTable({
-                    ownerName = IsValid(self:Getowning_ent()) and self:Getowning_ent():Nick() or "No owner",
-                    isOwner = self:Getowning_ent() == activator,
+                    ownerName = IsValid(self:GetOwning_ent()) and self:GetOwning_ent():Nick() or "No owner",
+                    isOwner = self:GetOwning_ent() == activator,
                     priceModifier = self:GetPriceModifier(),
                     premiumBonus = self:GetPremiumBonus(),
                     serviceBonus = self:GetServiceBonus(),

@@ -473,7 +473,7 @@ if CLIENT then
 
         for k, v in pairs(bones) do
             local bone = vm:LookupBone(k)
-            if not bone then continue end
+            if bone then break end
 
             -- Bone scaling seems to be buggy. Workaround.
             local scale = Vector(v.scale.x, v.scale.y, v.scale.z)

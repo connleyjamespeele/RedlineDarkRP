@@ -445,7 +445,7 @@ DarkRP.createEntity("Gun lab", {
     price = 500,
     max = 1,
     cmd = "buygunlab",
-    allowed = TEAM_GUN
+    allowed = {TEAM_GUN_DEALER},
 })
 
 if not DarkRP.disabledDefaults["modules"]["hungermod"] then
@@ -455,7 +455,7 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
         price = 400,
         max = 1,
         cmd = "buymicrowave",
-        allowed = TEAM_COOK
+        allowed = {TEAM_COOK}
     })
 
     -- Food Shipments
@@ -467,7 +467,7 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
         separate = false,
         pricesep = 0,
         noship = false,
-        allowed = TEAM_COOK,
+        allowed = {TEAM_COOK},
         category = "Food",
         customCheck = function(ply) return ply:IsCook() end,
     })
@@ -480,7 +480,7 @@ if not DarkRP.disabledDefaults["modules"]["hungermod"] then
         separate = false,
         pricesep = 0,
         noship = false,
-        allowed = TEAM_COOK,
+        allowed = {TEAM_COOK},
         category = "Food",
         customCheck = function(ply) return ply:IsCook() end,
     })

@@ -86,8 +86,6 @@ function ENT:DrawAnims(sysTime)
         if anim.progress > 1 then
             anim = anim.nextDonateAnimation
             self.firstDonateAnimation = anim
-
-            continue
         end
 
         draw.SimpleText(
