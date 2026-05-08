@@ -6,6 +6,7 @@ function ENT:Initialize()
     self:SetMoveType(MOVETYPE_VPHYSICS)
     self:SetSolid(SOLID_VPHYSICS)
 
+    self:SetMoney(0)
     self:SetDelayBeforeIncome(30) 
     self:SetMoneyGiveAmount(100) -- Set the default money give amount to 100
 end
@@ -13,14 +14,14 @@ end
 function ENT:Use(activator, caller)
     print("Entity used by: " .. tostring(activator))
     print("MoneyGiveAmount: " .. tostring(self:GetMoneyGiveAmount()))
-    print(caller)
+    print("caller: " .. tostring(caller))
 
     if CLIENT then return end
     if not IsValid(activator) or not activator:IsPlayer() then return end
 
-    local moneyAmount = self:GetMoneyGiveAmount()
+    local moneyAmount = self:GetMoney()
     if moneyAmount > 0 then
-        self:SetMoneyGiveAmount(0)
+        self:SetMoney(0)
         activator:addMoney(moneyAmount)
         DarkRP.notify(activator, 0, 4, "You received $" .. moneyAmount .. " from the money box!")
     else
@@ -31,6 +32,6 @@ end
 function ENT:Think()
     timer.Create("MoneyBoxIncome_" .. self:EntIndex(), self:GetDelayBeforeIncome(), 0, function()
         if not IsValid(self) then return end
-        self:SetMoneyGiveAmount(self:GetMoneyGiveAmount() + 100) 
+        self:SetMoney(self:GetMoney() + 100) 
     end)
 end 
