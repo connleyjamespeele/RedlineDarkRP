@@ -33,7 +33,7 @@ function ENT:Think()
     timer.Create("MoneyBoxIncome_" .. self:EntIndex(), self:GetDelayBeforeIncome(), 0, function()
         if not IsValid(self) then return end
         local CheckAround = ents.FindInSphere(self:GetPos(), 45)
-        local Income = 1000
+        local Income = 1000 -- start with a base income of 1000
         for _, ent in ipairs(CheckAround) do
             if ent then
                 print("Found entity: " .. tostring(ent))
@@ -43,6 +43,6 @@ function ENT:Think()
             end
         end
 
-        self:SetMoney(self:GetMoney() + Income) 
+        self:SetMoney(self:GetMoney() + Income) -- Add the calculated income to the current money amount
     end)
 end 
